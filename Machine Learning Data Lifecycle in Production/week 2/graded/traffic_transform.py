@@ -67,7 +67,7 @@ def preprocessing_fn(inputs):
     outputs[_transformed_name(_VOLUME_KEY)] = tf.cast(          
         # Use `tf.greater` to check if the traffic volume in a row is greater than the mean of the entire traffic volumn column
         # Hint: Use a `tft` function to compute the mean.
-        tf.greater(traffic_volume, tft.mean(tf.cast(inputs[_VOLUME_KEY], tf.float32))),
+        tf.greater(traffic_volume, tft.mean(traffic_volume)),
         
         tf.int64)                                        
     ### END CODE HERE
